@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your purchase">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Thank You - Your Business Name</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles specific to thank you page */
+        .thank-you-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+        
+        .thank-you-content {
+            max-width: 600px;
+            text-align: center;
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(139, 71, 137, 0.15);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .success-icon svg {
+            width: 48px;
+            height: 48px;
+            color: var(--white);
+        }
+        
+        .thank-you-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+        
+        .thank-you-content p {
+            color: var(--text-color);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin: 0 auto 1.5rem;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .order-details {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+            animation: fadeInUp 0.6s ease 0.4s both;
+        }
+        
+        .order-details h2 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .order-details p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .order-details strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(139, 71, 137, 0.05), rgba(244, 185, 66, 0.05));
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin: 1.5rem 0;
+            text-align: left;
+            animation: fadeInUp 0.6s ease 0.5s both;
+        }
+        
+        .info-box h3 {
+            font-size: 1.125rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+        }
+        
+        .info-box p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .info-box ul {
+            margin: 0.75rem 0 0 1.25rem;
+            padding: 0;
+        }
+        
+        .info-box li {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            animation: fadeInUp 0.6s ease 0.6s both;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.875rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 71, 137, 0.3);
+            outline: 2px solid var(--primary-dark);
+            outline-offset: 2px;
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            padding: 0.875rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(139, 71, 137, 0.2);
+            animation: fadeInUp 0.6s ease 0.7s both;
+        }
+        
+        .contact-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (simplified for thank you page) -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="River Rouge Productions">River Rouge Productions</a>
+        </nav>
+    </header>
+    
+    <main role="main">
+        <div class="thank-you-container">
+            <div class="thank-you-content">
+                <!-- Success Icon -->
+                <div class="success-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                
+                <!-- Main Thank You Message -->
+                <h1>Thank You for Your Purchase!</h1>
+                <p>Your order has been successfully received and will be shipped to you soon!</p>
+                
+                <!-- Order Details (will be populated if PDT is enabled) -->
+                <div class="order-details" id="orderDetails" style="display: none;">
+                    <h2>Order Summary</h2>
+                    <p><strong>Transaction ID:</strong> <span id="txnId">—</span></p>
+                    <p><strong>Amount Paid:</strong> <span id="amount">—</span></p>
+                    <p><strong>Email:</strong> <span id="email">—</span></p>
+                </div>
+                
+                <!-- What Happens Next -->
+                <div class="info-box">
+                    <h3>📦 What Happens Next?</h3>
+                    <ul>
+                        <li><strong>Confirmation Email:</strong> You'll receive an order confirmation at the email address provided to PayPal/Venmo.</li>
+                        <li><strong>Processing Time:</strong> Your order will be processed within 1-2 business days.</li>
+                        <li><strong>Shipping:</strong> Books ship via USPS and typically arrive within 3-7 business days to Continental U.S. addresses.</li>
+                        <li><strong>Tracking:</strong> You'll receive a tracking number once your order ships.</li>
+                    </ul>
+                </div>
+                
+                <!-- Shipping Info -->
+                <div class="info-box">
+                    <h3>🚚 Shipping Information</h3>
+                    <p>All orders include <strong>free shipping within the Continental United States</strong>. Your book will be carefully packaged and shipped directly to the address provided during checkout.</p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <a href="/" class="btn-primary">Return to Home</a>
+                    <a href="/#books" class="btn-secondary">Shop More Books</a>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <p>Questions about your order?</p>
+                    <p>Email us at <a href="mailto:riverrougeproductions@protonmail.com">riverrougeproductions@protonmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 River Rouge Productions. All rights reserved.</p>
+    </footer>
+    
+    <!-- Script to handle PayPal PDT (Payment Data Transfer) -->
+    <script>
+        // Parse URL parameters to show order details if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Check if PayPal returned transaction data
+            const txnId = urlParams.get('tx') || urlParams.get('txn_id');
+            const amount = urlParams.get('amt') || urlParams.get('mc_gross');
+            const email = urlParams.get('payer_email') || urlParams.get('receiver_email');
+            const status = urlParams.get('st') || urlParams.get('payment_status');
+            
+            // If we have transaction data, display it
+            if (txnId) {
+                document.getElementById('orderDetails').style.display = 'block';
+                document.getElementById('txnId').textContent = txnId;
+                
+                if (amount) {
+                    document.getElementById('amount').textContent = '$' + parseFloat(amount).toFixed(2);
+                }
+                
+                if (email) {
+                    document.getElementById('email').textContent = email;
+                }
+            }
+            
+            // Optional: Send confirmation to your analytics
+            if (txnId && typeof gtag !== 'undefined') {
+                gtag('event', 'purchase', {
+                    transaction_id: txnId,
+                    value: amount || 0,
+                    currency: 'USD'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
