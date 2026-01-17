@@ -11,12 +11,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/rrp-logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/rrp-logo.png">
     
-    
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://riverrougeproductions.com/">
-    <meta property="og:title" content="River Rouge Productions - Tagline">
-    <meta property="og:description" content="Brief description for social sharing">
+    <meta property="og:title" content="River Rouge Productions">
+    <meta property="og:description" content="Detroit-based book publishers & multi-media artists">
     <meta property="og:image" content="https://riverrougeproductions.com/images/rrp-logo.png">
     
     <title>River Rouge Productions</title>
@@ -34,149 +33,30 @@
         
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "River Rouge Productions",
-        "description": "Detroit-based book publishers & multi-media artists producing poetry, photography, and videos.",
-        "url": "https://riverrougeproductions.com",
-        "email": "riverrougeproductions@protonmail.com",
-        "sameAs": [
-            "https://www.facebook.com/riverrougeproductions",
-            "https://www.youtube.com/@RiverRougeProductions1881",
-            "https://vimeo.com/riverrouge"
-        ],
-        "image": "https://riverrougeproductions.com/images/rrp-logo.png"
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "River Rouge Productions",
+      "description": "Detroit-based book publishers & multi-media artists producing poetry, photography, and videos.",
+      "url": "https://riverrougeproductions.com",
+      "email": "riverrougeproductions@protonmail.com",
+      "sameAs": [
+        "https://www.facebook.com/riverrougeproductions",
+        "https://www.youtube.com/@RiverRougeProductions1881",
+        "https://vimeo.com/riverrouge"
+      ],
+      "image": "https://riverrougeproductions.com/images/rrp-logo.png"
+    }
     </script>
 </head>
 <body>
-    <script>
-        // Scroll-reactive gradient effect
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                document.body.classList.add('scrolled');
-            } else {
-                document.body.classList.remove('scrolled');
-            }
-        });
-    </script>
-    
-    <script>
-        // Book Gallery Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookCards = document.querySelectorAll('.book-card');
-            
-            bookCards.forEach(card => {
-                const images = card.querySelectorAll('.gallery-image');
-                const dots = card.querySelectorAll('.dot');
-                const galleryImages = card.querySelector('.gallery-images');
-                let currentIndex = 0;
-                let startX = 0;
-                let isDragging = false;
-                
-                // Dot click functionality
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        showImage(index);
-                    });
-                });
-                
-                // Touch/swipe functionality for mobile
-                galleryImages.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    isDragging = true;
-                }, { passive: true });
-                
-                galleryImages.addEventListener('touchmove', (e) => {
-                    if (!isDragging) return;
-                }, { passive: true });
-                
-                galleryImages.addEventListener('touchend', (e) => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    
-                    const endX = e.changedTouches[0].clientX;
-                    const diff = startX - endX;
-                    
-                    // Swipe threshold
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) {
-                            // Swiped left - next image
-                            showImage((currentIndex + 1) % images.length);
-                        } else {
-                            // Swiped right - previous image
-                            showImage((currentIndex - 1 + images.length) % images.length);
-                        }
-                    }
-                });
-                
-                // Mouse drag for desktop
-                galleryImages.addEventListener('mousedown', (e) => {
-                    startX = e.clientX;
-                    isDragging = true;
-                    galleryImages.style.cursor = 'grabbing';
-                });
-                
-                galleryImages.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                });
-                
-                galleryImages.addEventListener('mouseup', (e) => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    galleryImages.style.cursor = 'grab';
-                    
-                    const endX = e.clientX;
-                    const diff = startX - endX;
-                    
-                    if (Math.abs(diff) > 50) {
-                        if (diff > 0) {
-                            showImage((currentIndex + 1) % images.length);
-                        } else {
-                            showImage((currentIndex - 1 + images.length) % images.length);
-                        }
-                    }
-                });
-                
-                galleryImages.addEventListener('mouseleave', () => {
-                    isDragging = false;
-                    galleryImages.style.cursor = 'grab';
-                });
-                
-                galleryImages.style.cursor = 'grab';
-                
-                function showImage(index) {
-                    currentIndex = index;
-                    
-                    images.forEach((img, i) => {
-                        if (i === index) {
-                            img.classList.add('active');
-                        } else {
-                            img.classList.remove('active');
-                        }
-                    });
-                    
-                    dots.forEach((dot, i) => {
-                        if (i === index) {
-                            dot.classList.add('active');
-                            dot.setAttribute('aria-selected', 'true');
-                        } else {
-                            dot.classList.remove('active');
-                            dot.setAttribute('aria-selected', 'false');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
     <!-- Skip to main content link for screen readers -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Header & Navigation -->
     <header role="banner">
         <nav role="navigation" aria-label="Main navigation">
-            <a href="/" class="logo" aria-label="River Rouge Productions">
+            <a href="/" class="logo" aria-label="River Rouge Productions Home">
                 <img src="images/rrp-logo.png" alt="River Rouge Productions Logo" class="logo-image">
                 <span class="logo-text">River Rouge Productions</span>
             </a>            
@@ -213,19 +93,18 @@
                         </div>
                     </div>
                     
-                    <div class="book-info">     
+                    <div class="book-info">
+                        <h3 itemprop="name">Sleep for Hours</h3>
+                        <div class="book-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="price" itemprop="price" content="18.00">$18.00</span>
+                            <meta itemprop="priceCurrency" content="USD">
+                            <meta itemprop="availability" content="https://schema.org/InStock">
+                        </div>
+                        
                         <div class="payment-buttons">
-                            <div class="payment-buttons" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="USD">
-                                <meta itemprop="availability" content="https://schema.org/InStock">    
-                                <div id="paypal-container-FKPJ3N7UHMD7S"></div>
-                                <p class="shipping-info">Free shipping within the Continental U.S.</p>
-                                <script>
-                                  paypal.HostedButtons({
-                                    hostedButtonId: "FKPJ3N7UHMD7S",
-                                  }).render("#paypal-container-FKPJ3N7UHMD7S")
-                                </script>
-                            </div>
+                            <div id="paypal-container-FKPJ3N7UHMD7S"></div>
+                            <p class="shipping-info">Free shipping within the Continental U.S.</p>
+
                         </div>
                     </div>
                 </article>
@@ -244,16 +123,16 @@
                     </div>
                     
                     <div class="book-info">
-                        <div class="payment-buttons" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <h3 itemprop="name">Food & Flowers</h3>
+                        <div class="book-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <span class="price" itemprop="price" content="18.00">$18.00</span>
                             <meta itemprop="priceCurrency" content="USD">
                             <meta itemprop="availability" content="https://schema.org/InStock">
+                        </div>
+                        
+                        <div class="payment-buttons">
                             <div id="paypal-container-RLRJMDDZPMXGW"></div>
                             <p class="shipping-info">Free shipping within the Continental U.S.</p>
-                            <script>
-                              paypal.HostedButtons({
-                                hostedButtonId: "RLRJMDDZPMXGW",
-                              }).render("#paypal-container-RLRJMDDZPMXGW")
-                            </script>
                         </div>
                     </div>
                 </article>
@@ -281,11 +160,6 @@
                         
                         <div class="payment-buttons">
                             <div id="paypal-container-NT4KLCQW96BAG"></div>
-                            <script>
-                              paypal.HostedButtons({
-                                hostedButtonId: "NT4KLCQW96BAG",
-                              }).render("#paypal-container-NT4KLCQW96BAG")
-                            </script>
                         </div>
                     </div>
                 </article>
@@ -296,16 +170,16 @@
         <section id="videos">
             <h2>Videos</h2>
             
-            <!-- YouTube Embed Example -->
             <h3>Roses</h3>            
             <div class="video-container">
                 <iframe 
-                    src="https://www.youtube.com/embed/JbZQhXZjXaI?si=A2_tRjHz1neuSgw4"                    title="Video title for accessibility"
+                    src="https://www.youtube.com/embed/JbZQhXZjXaI?si=A2_tRjHz1neuSgw4" 
                     title="Roses, a poetry video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
+            
             <h3>Ode to Fall</h3>
             <div class="video-container">
                 <iframe 
@@ -317,12 +191,12 @@
             </div>
         </section>
         
-        <!-- Social Media Links -->
+        <!-- Contact Section -->
         <section id="contact">
             <h2>Connect</h2>
             <div class="social-links">
                 <a href="mailto:riverrougeproductions@protonmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email us">
-                    <span aria-hidden="true">📠</span> Email
+                    <span aria-hidden="true">📧</span> Email
                 </a>
                 <a href="https://www.facebook.com/riverrougeproductions" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
                     <span aria-hidden="true">📘</span> Facebook
@@ -342,10 +216,13 @@
         <div class="footer-logo">
             <img src="images/rrp-logo.png" alt="River Rouge Productions Logo">
         </div>
-        <p>&copy; 2026 River Rouge Productions. All rights reserved.</p>
+        <p>&copy; 2026 River Rouge Productions. All rights reserved. riverrougeproductions@protonmail.com</p>
         <p>
             <a href="#main-content">Back to top</a>
         </p>
     </footer>
+    
+    <!-- Main JavaScript - Load at end of body for better performance -->
+    <script src="js/script.js"></script>
 </body>
 </html>

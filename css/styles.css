@@ -55,14 +55,27 @@ body::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
-    opacity: 0.05;
+    opacity: 0.12;
     z-index: -1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
+/* Progressive darkening as user scrolls through sections */
 @media (prefers-reduced-motion: no-preference) {
-    body.scrolled::before {
-        opacity: 0.08;
+    body.scroll-level-1::before {
+        opacity: 0.16;
+    }
+    
+    body.scroll-level-2::before {
+        opacity: 0.20;
+    }
+    
+    body.scroll-level-3::before {
+        opacity: 0.24;
+    }
+    
+    body.scroll-level-4::before {
+        opacity: 0.28;
     }
 }
 
@@ -391,6 +404,59 @@ section {
     pointer-events: auto;
 }
 
+/* Navigation Arrows (Desktop) */
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-arrow:hover,
+.gallery-arrow:focus {
+    background: var(--white);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.gallery-arrow-left {
+    left: 12px;
+}
+
+.gallery-arrow-right {
+    right: 12px;
+}
+
+.gallery-arrow svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+/* Hide arrows on mobile, show on desktop */
+.gallery-arrow {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .gallery-arrow {
+        display: flex;
+    }
+}
+
 /* Gallery Dots */
 .gallery-dots {
     position: absolute;
@@ -440,12 +506,16 @@ section {
     margin: 0;
     color: var(--primary-color);
     font-size: 1.5rem;
+    /* Hide title - PayPal button shows it */
+    display: none;
 }
 
 .book-price {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    /* Hide price info - PayPal button shows it */
+    display: none;
 }
 
 .price {
@@ -478,6 +548,15 @@ section {
     font-size: 0.875rem;
     color: var(--text-light);
     margin: 0;
+}
+
+/* Bundle card - keep title and pricing visible for bundle */
+.bundle-card .book-info h3 {
+    display: block;
+}
+
+.bundle-card .book-price {
+    display: flex;
 }
 
 /* Payment Buttons */
@@ -648,7 +727,7 @@ footer a:focus {
     
     .book-card:not(.bundle-card) {
         flex-direction: row;
-        min-height: 600px;
+        min-height: 684px;
     }
     
     .book-gallery {
